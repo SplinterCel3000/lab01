@@ -17,20 +17,21 @@ namespace Lab01
             answer = Console.ReadLine();
             try
             {
-                
+
                 int number = Convert.ToInt32(answer);
-                PopulateMethod(number);
-             
+                int[] potato = PopulateMethod(number);
+                GetSumMethood(potato);
+
             }
             catch (Exception)
             {
                 Console.WriteLine("Thats not a number...");
-              
+
             }
 
-            
+
         }
-        static void PopulateMethod(int number)
+        static int[] PopulateMethod(int number)
         {
             int[] array = new int[number];
             for (int i = 0; i < array.Length; i++)
@@ -44,7 +45,22 @@ namespace Lab01
             for (int i = 0; i < array.Length; i++)
             {
                 Console.Write(array[i] + " ");
+                Console.WriteLine();
+                
             }
+            return array;
+        }
+        static int GetSumMethood(int[] array)
+        {
+
+            
+            int sum = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum += array[i];
+            }
+            Console.WriteLine($"Your sum of the numbers are: {sum}");
+            return sum;
         }
     }
 }
