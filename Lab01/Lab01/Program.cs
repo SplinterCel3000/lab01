@@ -7,7 +7,23 @@ namespace Lab01
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            //test 
+            StartSequence();
+        }
+
+        static void StartSequence()
+        {
+            string answer = "";
+            try
+            {
+                Console.WriteLine("Enter a number greater than zero.");
+                answer = Console.ReadLine();
+                int number = Convert.ToInt32(answer);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Thats not a number...");
+              
+            }
         }
     }
 }
