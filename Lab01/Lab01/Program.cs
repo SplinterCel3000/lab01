@@ -20,7 +20,8 @@ namespace Lab01
 
                 int number = Convert.ToInt32(answer);
                 int[] potato = PopulateMethod(number);
-                GetSumMethood(potato);
+                int sum = GetSumMethood(potato);
+                GetProductMethood(potato, sum);
 
             }
             catch (Exception)
@@ -61,6 +62,27 @@ namespace Lab01
             }
             Console.WriteLine($"Your sum of the numbers are: {sum}");
             return sum;
+        }
+        static int GetProductMethood(int[] array,  int sum)
+        {
+            try
+            {
+                
+                Console.WriteLine($"Enter a number between 1 and {array.Length}.");
+                int input = Convert.ToInt32(Console.ReadLine());
+                int multi = array[input - 1];
+                int product = multi * sum;
+                Console.WriteLine($"The product of the numbers are: {product}");
+                return product;
+            }
+            catch (Exception)
+            {
+                throw;
+                
+            }
+
+            
+           
         }
     }
 }
