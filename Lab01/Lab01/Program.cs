@@ -21,7 +21,8 @@ namespace Lab01
                 int number = Convert.ToInt32(answer);
                 int[] potato = PopulateMethod(number);
                 int sum = GetSumMethood(potato);
-                GetProductMethood(potato, sum);
+                int multiply = GetProductMethood(potato, sum);
+                GetQuotientMethood(multiply);
 
             }
             catch (Exception)
@@ -83,6 +84,28 @@ namespace Lab01
 
             
            
+        }
+
+        static int GetQuotientMethood(int product)
+        {
+            try
+            {
+
+                Console.WriteLine("Enter a number to divide by.");
+                int input = Convert.ToInt32(Console.ReadLine());
+                int quotient = product / input;
+                Console.WriteLine($"The product of the numbers are: {quotient}");
+                return quotient;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine($"Dont Divide by {0}");
+                throw;
+
+            }
+
+
+
         }
     }
 }
