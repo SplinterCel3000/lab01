@@ -19,17 +19,8 @@ namespace Lab01
             {
                 
                 int number = Convert.ToInt32(answer);
-                int[] array = new int[number];
-                for (int i = 0; i < array.Length; i++)
-                {
-                    string input = Console.ReadLine();
-                    int convert = Convert.ToInt32(input);
-                    array[i] = convert;
-                }
-                for (int i = 0; i < array.Length; i++)
-                {
-                    Console.Write(array[i] + " ");
-                }
+                PopulateMethod(number);
+             
             }
             catch (Exception)
             {
@@ -37,7 +28,23 @@ namespace Lab01
               
             }
 
-
+            
+        }
+        static void PopulateMethod(int number)
+        {
+            int[] array = new int[number];
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine($" Enter a number {i + 1} of {array.Length} ");
+                string input = Console.ReadLine();
+                int convert = Convert.ToInt32(input);
+                array[i] = convert;
+            }
+            Console.WriteLine("your numbers are:");
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
         }
     }
 }
